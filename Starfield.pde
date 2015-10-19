@@ -4,13 +4,13 @@ public void setup()
 	size(500,500);
 	background(0,0,0);
 
-	rParticle = new Particle[200];
+	rParticle = new Particle[1500];
 
 	for(int i = 0; i <rParticle.length; i++){
 		rParticle[i] = new NormalParticle();
 	}
 		rParticle[0] = new OddballParticle();
-		rParticle[199] = new JumboParticle();
+		rParticle[1499] = new JumboParticle();
 }
 public void draw()
 {
@@ -33,7 +33,7 @@ class NormalParticle implements Particle
 		x = 250.0;
 		y = 250.0;
 		pColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-		pSpeed = (Math.random()*10);
+		pSpeed = 5;
 		pAngle = (Math.random()*Math.PI*2);
 	}
 
@@ -91,7 +91,7 @@ class OddballParticle implements Particle
 	}
 
 	public void show(){
-		fill(0,(float)y,(float)x);
+		fill((float)(Math.random()*255),(float)y,(float)x);
 		noStroke();
 		ellipse((float)x, (float)y, 10.0, 10.0);
 	}}
@@ -118,7 +118,7 @@ class JumboParticle extends NormalParticle
 	public void show(){
 		fill((float)x,(float)y,0);
 		noStroke();
-		ellipse((float)x, (float)y, 20.0, 20.0);
+		ellipse((float)x, (float)y, 40.0, 40.0);
 	}
 }
 
