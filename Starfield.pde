@@ -1,7 +1,7 @@
 Particle [] rParticle;
 public void setup()
 {
-	size(500,500);
+	size(700,700);
 	background(0,0,0);
 
 	rParticle = new Particle[1500];
@@ -15,7 +15,7 @@ public void setup()
 public void draw()
 {
 	fill(0,0,0,10);
-	rect(0,0,500,500);
+	rect(0,0,700,700);
 	for(int i = 0; i <rParticle.length; i++){
 		rParticle[i].move();
 		rParticle[i].show();
@@ -30,8 +30,8 @@ class NormalParticle implements Particle
 	int pColor;
 
 	NormalParticle(){
-		x = 250.0;
-		y = 250.0;
+		x = 350.0;
+		y = 350.0;
 		pColor = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
 		pSpeed = 5;
 		pAngle = (Math.random()*Math.PI*2);
@@ -47,10 +47,10 @@ class NormalParticle implements Particle
 		if(mouseButton == LEFT){
 			pAngle = pAngle - 0.08;
 		}
-		if(x>350 || x<150 || y>350 || y<150){
+		if(x>450 || x<250 || y>450 || y<250){
 			pSpeed = -3;    
 		}
-		 if(x == 250){
+		 if(x == 350){
 			pSpeed = 3;
 		}
 
@@ -107,10 +107,10 @@ class JumboParticle extends NormalParticle
 		if(mouseButton == LEFT){
 			pAngle = pAngle - 0.08;
 		}
-		if(x>350 || x<150 || y>350 || y<150){
+		if(x>450 || x<250 || y>450 || y<250){
 			pSpeed = -3;    
 		}
-		 if(x == 250){
+		 if(x == 350){
 			pSpeed = 3;
 		}
 	}
